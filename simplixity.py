@@ -41,7 +41,7 @@ class MaverikBot:
         start_time = time.time()
         driver = webdriver.Edge(executable_path="./msedgedriver.exe")
         driver.maximize_window() 
-        driver.get("https://maverikstudio.vn/account/login")
+        driver.get("https://thesimplixity.com/account/login")
 
         try:
             ele_wait = driver.find_element_by_id("challenge-form")
@@ -72,7 +72,7 @@ class MaverikBot:
         except:
             pass
         
-        driver.get("https://maverikstudio.vn/collections/all")
+        driver.get("https://thesimplixity.com/collections/all")
         try:
             ele_wait = driver.find_element_by_id("challenge-form")
             time.sleep(4)
@@ -110,13 +110,13 @@ class MaverikBot:
         ele_addToCart.click()
         time.sleep(0.25)
 
-        driver.get("https://maverikstudio.vn/checkout")
+        driver.get("https://thesimplixity.com/checkout")
         try:
             ele_wait = driver.find_element_by_id("challenge-form")
             time.sleep(4)
         except:
             pass
-        time.sleep(0.3)
+        time.sleep(0.2)
         WebDriverWait(driver, 10, poll_frequency=0.5).until(
             ec.presence_of_element_located((By.CSS_SELECTOR, "option[value='50']")))
         ele_customerProvince = Select(driver.find_element_by_id("customer_shipping_province"))
@@ -127,16 +127,16 @@ class MaverikBot:
 
         ele_customerDistrict = Select(driver.find_element_by_id("customer_shipping_district"))
         ele_customerDistrict.select_by_value(self.district)
-        time.sleep(0.3)
+        time.sleep(0.2)
 
         ele_customerWard = Select(driver.find_element_by_id("customer_shipping_ward"))
         ele_customerWard.select_by_value(self.ward)
-        time.sleep(0.3)
+        time.sleep(0.2)
         ele_complete = driver.find_element_by_class_name("step-footer-continue-btn")
         ele_complete.click()
         print("--- %s seconds ---" % (time.time() - start_time))
         time.sleep(10000)
-bot1 = MaverikBot("nqvy090120@gmail.com", "fireblood1", "knees", "mocha", "m", 1, "50", "480", "26914")
+bot1 = MaverikBot("caocuong9777@gmail.com", "fireblood1", "taupe", "hoodie", "m", 1, "50", "480", "26914")
 
 
 thread1 = threading.Thread(target=bot1.copping)
@@ -144,3 +144,6 @@ thread1 = threading.Thread(target=bot1.copping)
 
 
 thread1.start()
+
+
+
